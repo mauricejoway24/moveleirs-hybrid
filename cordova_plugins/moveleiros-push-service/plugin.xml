@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements.  See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership.  The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied.  See the License for the
+  specific language governing permissions and limitations
+  under the License.
+-->
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="moveleiros-push-service"
+      version="1.0.1">
+    <name>PushService</name>
+    <description>Controls push notification</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,push notification,moveleiros</keywords>
+
+    <engines>
+      <engine name="cordova-android" version=">=4.0.0" />
+    </engines>
+
+    <asset src="www/pushservice.js" target="js/pushservice.js"/>
+
+  <js-module src="www/pushservice.js" name="pushservice">
+    <clobbers target="pushservice" />
+  </js-module>
+
+    <platform name="android">
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:exported="true" android:name="chat.moveleiros.com.PushServicePluginActivity" android:launchMode="singleTop">
+              <intent-filter>   
+                <action android:name="CHAT_MOVELEIROS_PLUGIN_ACTIVITY" />  
+                <category android:name="android.intent.category.DEFAULT" />
+              </intent-filter>			
+            </activity>
+            <service android:name="chat.moveleiros.com.PushService">
+            </service>
+        </config-file>
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="PushServicePlugin" >
+                <param name="android-package" value="chat.moveleiros.com.PushServicePlugin"/>
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/PushService.java" target-dir="src/chat/moveleiros/com" />
+        <source-file src="src/android/PushServicePlugin.java" target-dir="src/chat/moveleiros/com" />
+        <source-file src="src/android/PushServicePluginActivity.java" target-dir="src/chat/moveleiros/com" />
+
+        <framework src="com.google.firebase:firebase-core:+" />
+        <framework src="com.google.firebase:firebase-messaging:+" />
+
+        <framework src="src/android/PushServicePlugin.gradle" custom="true" type="gradleReference"/>
+
+        <info>
+              This plugin is only applicable for versions of cordova-android greater than 4.0. If you have a previous platform version, you do *not* need this plugin since the whitelist will be built in.
+        </info>
+    </platform>
+
+    <hook src="scripts/fcm_config_files_process.js" type="after_plugin_add" />
+	  <hook src="scripts/fcm_config_files_process.js" type="after_prepare" />
+
+</plugin>

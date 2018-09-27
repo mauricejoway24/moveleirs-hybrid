@@ -1,0 +1,28 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-fcm": {
+      "PACKAGE_NAME": "chatmoveleiros.moveleiros.com"
+    },
+    "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "chatmoveleiros.moveleiros.com"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "chatmoveleiros.moveleiros.com"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "chatmoveleiros.moveleiros.com"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "chatmoveleiros.moveleiros.com"
+    }
+  }
+}

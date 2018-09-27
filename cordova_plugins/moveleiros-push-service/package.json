@@ -1,0 +1,21 @@
+{
+  "name": "moveleiros-push-service",
+  "version": "1.0.1",
+  "description": "Cordova plugin for sending notification",
+  "cordova": {
+    "id": "moveleiros-push-service",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "moveleiros",
+    "push",
+    "moveleiros-android",
+    "moveleiros-ios"
+  ],
+  "author": "Austin Felipe",
+  "license": "MIT"
+}

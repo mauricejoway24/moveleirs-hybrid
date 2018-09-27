@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget android-packageName="chatmoveleiros.moveleiros.com" android-versionCode="38" android-versionName="1.0.25" id="chat.moveleiros.com" version="1.0.22" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Chat Moveleiros</name>
+    <description>
+      MovChat App
+    </description>
+    <author email="contato@moveleiros.com.br" href="https://www.moveleiros.com.br">
+      Moveleiros Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+        <icon density="mdpi" src="res/icon/android/ic_launcher-mdpi.png" />
+        <icon density="hdpi" src="res/icon/android/ic_launcher-hdpi.png" />
+        <icon density="xhdpi" src="res/icon/android/ic_launcher-xhdpi.png" />
+        <icon density="xxhdpi" src="res/icon/android/ic_launcher-xxhdpi.png" />
+        <icon density="xxxhdpi" src="res/icon/android/ic_launcher-xxxhdpi.png" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
+    <plugin name="cordova-plugin-fcm" spec="file:cordova_plugins/cordova-plugin-fcm" />
+    <plugin name="cordova-plugin-local-notification" spec="file:cordova_plugins/cordova-plugin-local-notification" />
+    <engine name="android" spec="^7.0.0" />
+</widget>

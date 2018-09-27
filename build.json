@@ -1,0 +1,18 @@
+{
+  "android": {
+    "release": {
+      "keystore": "MoveleirosChatAssinatura.jks",
+      "storePassword": "123mudar",
+      "alias": "key0",
+      "password" : "123mudar",
+      "keystoreType": "jks"
+    },
+    "debug": {
+      "keystore": "MoveleirosChatAssinatura.jks",
+      "storePassword": "123mudar",
+      "alias": "key0",
+      "password" : "123mudar",
+      "keystoreType": "jks"
+    }
+  }
+}
